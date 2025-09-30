@@ -1,11 +1,446 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Project Page</title>
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="QuaMa, quama, quantitative manipulation, ">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuaMa: Extending Skill Learning with Delta Dynamics Modeling for Precise and Generalizable Quantitative Manipulation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/Cocktail.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
 </head>
 <body>
-  <h1>Project Title</h1>
-  <p>Coming soon...</p>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">QuaMa: Extending Skill Learning with Delta Dynamics Modeling for Precise and Generalizable Quantitative Manipulation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Anonymous Authors
+            </span>
+          </div>
+
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Washington,</span>
+            <span class="author-block"><sup>2</sup>Google Research</span>
+          </div> -->
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/ICRA26_5117_VI_i.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Quantitative manipulation requires robots not only to perform actions but also to achieve precise target quantities, a capability essential for applications such as cooking, laboratory automation, and industrial dispensing.
+            Achieving both precision and generalization, however, remains challenging due to nonlinear and delayed dynamics, while existing end-to-end policies lack the robustness to handle such variability. 
+            We introduce <strong>QuaMa</strong>, a framework that extend skill learning with delta dynamics modeling: a weighted behavior cloning policy captures general skills, while a delta-based Quantity Prediction Model (QPM) forecasts future quantity changes under candidate actions. 
+            During execution, Model Predictive Action Refinement (MPAR) leverages QPM to refine the skill policy's output, ensuring accurate and reliable control. 
+            This modular design explicitly reasons about quantities while retaining compatibility with advances in imitation learning. 
+            We validate QuaMa on real-world pouring tasks with diverse containers, liquids, and granules. 
+            Results show that QuaMa consistently achieves high accuracy and robust zero-shot generalization to unseen containers, materials, and target quantities. 
+            Across all tested scenarios, the average pouring error remains within 1g, demonstrating both precision and generalization. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <video id="teaser" controls preload muted loop playsinline height="100%">
+          <source src="./static/videos/ICRA26_5117_VI_i.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+
+
+
+
+
+<template>
+
+<!-- Container×Liquids (Left) | Container×Granules (Right) -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-variable is-6">
+      
+      <!-- LEFT: Container × Liquid -->
+      <div class="column">
+        <h2 class="title is-4 has-text-centered">Container × Liquid</h2>
+        <div class="box" style="border-radius: 16px;">
+          <video id="video_liquid"
+                 autoplay
+                 loop
+                 muted
+                 playsinline
+                 style="width: 100%; height: auto; border-radius: 12px; border: 3px solid #66c0ff;">
+            <source id="src_liquid" src="static/data/videos/liquids/cup_water.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p id="label_liquid" class="has-text-weight-semibold" style="margin-top: 8px;">Playing: cup + water</p>
+          <p id="status_liquid" class="is-size-7 has-text-grey" style="margin-top: 2px;"></p>
+
+          <!-- Controls -->
+          <div class="mt-3" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="field has-text-centered">
+              <label for="container_liquid" class="label is-small" style="margin-bottom: 6px;">Container</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select id="container_liquid">
+                    <!-- 按需替换为你的容器名 -->
+                    <option value="cup">cup</option>
+                    <option value="bottle">bottle</option>
+                    <option value="beaker">beaker</option>
+                    <option value="bowl">bowl</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field has-text-centered">
+              <label for="liquid_liquid" class="label is-small" style="margin-bottom: 6px;">Liquid</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select id="liquid_liquid">
+                    <!-- 按需替换为你的液体名 -->
+                    <option value="water">water</option>
+                    <option value="oil">oil</option>
+                    <option value="milk">milk</option>
+                    <option value="juice">juice</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Container × Granule -->
+      <div class="column">
+        <h2 class="title is-4 has-text-centered">Container × Granule</h2>
+        <div class="box" style="border-radius: 16px;">
+          <video id="video_granule"
+                 autoplay
+                 loop
+                 muted
+                 playsinline
+                 style="width: 100%; height: auto; border-radius: 12px; border: 3px solid #66c0ff;">
+            <source id="src_granule" src="static/data/videos/granules/cup_rice.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p id="label_granule" class="has-text-weight-semibold" style="margin-top: 8px;">Playing: cup + rice</p>
+          <p id="status_granule" class="is-size-7 has-text-grey" style="margin-top: 2px;"></p>
+
+          <!-- Controls -->
+          <div class="mt-3" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="field has-text-centered">
+              <label for="container_granule" class="label is-small" style="margin-bottom: 6px;">Container</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select id="container_granule">
+                    <!-- 与左侧容器可保持一致 -->
+                    <option value="cup">cup</option>
+                    <option value="bottle">bottle</option>
+                    <option value="beaker">beaker</option>
+                    <option value="bowl">bowl</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field has-text-centered">
+              <label for="granule_granule" class="label is-small" style="margin-bottom: 6px;">Granule</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select id="granule_granule">
+                    <!-- 按需替换为你的颗粒物名 -->
+                    <option value="rice">rice</option>
+                    <option value="beans">beans</option>
+                    <option value="lentils">lentils</option>
+                    <option value="pearl">pearl</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /columns -->
+  </div>
+</section>
+
+
+<script>
+  /**
+   * 通用播放器工厂：为一个区域绑定两个下拉菜单，自动拼接视频路径并播放
+   * @param {Object} cfg
+   * @param {string} cfg.videoId - <video> 元素 id
+   * @param {string} cfg.sourceId - <source> 元素 id
+   * @param {string} cfg.labelId  - 标题文本 id
+   * @param {string} cfg.statusId - 状态文本 id
+   * @param {string} cfg.containerSelectId - 容器下拉 id
+   * @param {string} cfg.materialSelectId  - 材料（liquid or granule）下拉 id
+   * @param {string} cfg.baseDir - 基础目录，如 'static/data/videos/liquids' or '.../granules'
+   * @param {Object} cfg.overrideMap - 可选覆盖命名的映射表，key=`{container}:{material}`
+   * @param {string} cfg.defaultContainer - 默认容器
+   * @param {string} cfg.defaultMaterial  - 默认材料
+   */
+  function createPlayer(cfg) {
+    const videoEl = document.getElementById(cfg.videoId);
+    const sourceEl = document.getElementById(cfg.sourceId);
+    const labelEl  = document.getElementById(cfg.labelId);
+    const statusEl = document.getElementById(cfg.statusId);
+    const containerSel = document.getElementById(cfg.containerSelectId);
+    const materialSel  = document.getElementById(cfg.materialSelectId);
+
+    // 初始化默认值
+    if (cfg.defaultContainer) containerSel.value = cfg.defaultContainer;
+    if (cfg.defaultMaterial)  materialSel.value  = cfg.defaultMaterial;
+
+    const buildKey = (c, m) => `${c}:${m}`;
+    const buildSrc = (c, m) => {
+      const key = buildKey(c, m);
+      if (cfg.overrideMap && cfg.overrideMap[key]) {
+        return `${cfg.baseDir}/${cfg.overrideMap[key]}`;
+      }
+      return `${cfg.baseDir}/${c}_${m}.mp4`;
+    };
+
+    const setStatus = (msg, isError = false) => {
+      statusEl.textContent = msg || '';
+      statusEl.style.color = isError ? '#d9534f' : '#7a7a7a';
+    };
+
+    function update() {
+      const c = containerSel.value;
+      const m = materialSel.value;
+      const src = buildSrc(c, m);
+      labelEl.textContent = `Playing: ${c} + ${m}`;
+      setStatus('Loading…', false);
+      sourceEl.src = src;
+      videoEl.load();
+      const p = videoEl.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(() => setStatus('Autoplay blocked. Click video to play.', true));
+      }
+    }
+
+    // 事件绑定
+    containerSel.addEventListener('change', update);
+    materialSel.addEventListener('change', update);
+
+    // 加载反馈
+    videoEl.addEventListener('loadeddata', () => setStatus(''));
+    videoEl.addEventListener('error', () => {
+      const c = containerSel.value, m = materialSel.value;
+      setStatus(`File not found: ${buildSrc(c, m)}`, true);
+    });
+
+    // 首次加载
+    update();
+  }
+
+  // 左：Liquids
+  createPlayer({
+    videoId: 'video_liquid',
+    sourceId: 'src_liquid',
+    labelId: 'label_liquid',
+    statusId: 'status_liquid',
+    containerSelectId: 'container_liquid',
+    materialSelectId: 'liquid_liquid',
+    baseDir: 'static/data/videos/liquids',
+    overrideMap: {
+      // 如需特殊命名：'beaker:milk': 'beaker_milk_v2_240fps.mp4'
+    },
+    defaultContainer: 'cup',
+    defaultMaterial: 'water'
+  });
+
+  // 右：Granules
+  createPlayer({
+    videoId: 'video_granule',
+    sourceId: 'src_granule',
+    labelId: 'label_granule',
+    statusId: 'status_granule',
+    containerSelectId: 'container_granule',
+    materialSelectId: 'granule_granule',
+    baseDir: 'static/data/videos/granules',
+    overrideMap: {
+      // 例：'bowl:beans': 'bowl_redbeans_clip.mp4'
+    },
+    defaultContainer: 'cup',
+    defaultMaterial: 'rice'
+  });
+</script>
+
+
+</template>
+
+
+
+
+
+
+
+<!-- 
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p class="has-text-centered">
+            This website is designed based on 
+            <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
