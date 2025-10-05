@@ -48,10 +48,11 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">QuaMa: Extending Skill Learning with Delta Dynamics Modeling for Precise and Generalizable Quantitative Manipulation</h1>
-          <div class="is-size-5 publication-authors">
+          <h1 class="title is-1 publication-title">
+            <img src="static/images/Cocktail.png" alt="icon" style="width:40px; height:40px; vertical-align:0; margin-right:0px;">   <span style="color:rgb(239, 148, 158);">Qua</span><span style="color:rgb(145, 172, 224);">Ma</span>: Extending Skill Learning with Delta Dynamics Modeling for Precise and Generalizable <span style="color:rgb(239, 148, 158);">Quantitative</span> <span style="color:rgb(145, 172, 224);">Manipulation</span></h1>
+          <div class="is-size-4 publication-authors">
             <span class="author-block">
-              Anonymous Authors
+              <strong>Anonymous Authors</strong>
             </span>
           </div>
 
@@ -172,35 +173,130 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <video id="teaser" controls preload muted loop playsinline height="100%">
-          <source src="./static/videos/ICRA26_5117_VI_i.mp4"
+          <source src="./static/videos/Quantatitive Manipulation (v1)_(16_9).mp4"
                   type="video/mp4">
         </video>
       </div>
     </div>
     <!--/ Paper video. -->
+
+    <!-- Pipeline. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Pipeline</h2>
+        <figure>
+          <img src="./static/images/Pipeline2.png" alt="Pipeline">
+        </figure>
+        <!-- caption -->
+        <p style="text-align: left;"><strong>Overview of QuaMa</strong>. 
+          (1) A weighted BC policy addresses data imbalance by emphasizing actions near the target quantity. 
+          (2) A delta-based Quantity Prediction Model (QPM) predicts future quantity changes from history and candidate actions. 
+          (3) During execution, Model Predictive Action Refinement (MPAR) combines BC outputs with QPM predictions to refine actions online, enabling precise and generalizable quantitative manipulation.
+        </p>
+      </div>
+    </div>
+    <!--/ Pipeline. -->
   </div>
 </section>
 
 
 
+<!-- Experiments -->
 
-
-
-
-<template>
-
-<!-- Container×Liquids (Left) | Container×Granules (Right) -->
 <section class="section">
   <div class="container is-max-desktop">
+
+    <!-- Experiment Setup -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiments</h2>
+        <figure>
+          <img src="./static/images/Exp_setup.png" alt="Experiment Setup">
+        </figure>
+        <div class="content has-text-justified">
+          <p>
+            <strong>Experiment Setup.</strong> We evaluate on two quantitative manipulation tasks: pouring <strong>liquids</strong> and <strong>granules</strong>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Experiment Setup -->
+
+    <!-- Q1 Indistribution Results -->
+    <h2 class="title is-4 has-text-centered">Q1: Can QuaMa achieve precise quantitative manipulation?</h2>
+    <!-- Liquids -->
+    <h2 class="title is-4 has-text-centered">Liquids</h2>
+    <div class="columns is-variable is-4">
+      
+      <div class="column">
+        <video id="q1_water_pd" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q1/water_pd_new_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">PD controller: 21.0 (+1.0) </p>
+      </div>
+
+      <div class="column">
+        <video id="q1_water_bc" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q1/water_bc_new_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">BC: 20.5 (+0.5) </p>
+      </div>
+
+      <div class="column">
+        <video id="q1_water_quama" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q1/water_quama_new_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">QuaMa: 20.1 (+0.1) </p>
+      </div>
+      
+    </div>
+
+    <!-- Granules -->
+    <h2 class="title is-4 has-text-centered">Granules</h2>
+    <div class="columns is-variable is-4">
+      
+      <div class="column">
+        <video id="q1_coix_pd" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q1/coix_pd_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">PD controller: 26.5 (+6.5)</p>
+      </div>
+
+      <div class="column">
+        <video id="q1_coix_bc" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q1/coix_bc_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">BC: 21.5 (+1.5)</p>
+      </div>
+
+      <div class="column">
+        <video id="q1_coix_quama" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q1/coix_quama_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">QuaMa: 20.3 (+0.3)</p>
+      </div>
+
+    </div>
+    <!--/ Q1 Indistribution Results -->
+
+    <!-- Q2 Generalization Results -->
+    <h2 class="title is-4 has-text-centered">Q2: Can QuaMa generalize to unseen containers and unseen materials?</h2>
+    <!-- Container×Liquids (Left) | Container×Granules (Right) -->
     <div class="columns is-variable is-6">
       
       <!-- LEFT: Container × Liquid -->
       <div class="column">
-        <h2 class="title is-4 has-text-centered">Container × Liquid</h2>
+        <h2 class="title is-4 has-text-centered">Liquids</h2>
         <div class="box" style="border-radius: 16px;">
           <video id="video_liquid"
                  autoplay
-                 loop
                  muted
                  playsinline
                  style="width: 100%; height: auto; border-radius: 12px; border: 3px solid #66c0ff;">
@@ -218,10 +314,12 @@
                 <div class="select is-fullwidth">
                   <select id="container_liquid">
                     <!-- 按需替换为你的容器名 -->
-                    <option value="cup">cup</option>
-                    <option value="bottle">bottle</option>
-                    <option value="beaker">beaker</option>
-                    <option value="bowl">bowl</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
                   </select>
                 </div>
               </div>
@@ -234,9 +332,12 @@
                   <select id="liquid_liquid">
                     <!-- 按需替换为你的液体名 -->
                     <option value="water">water</option>
-                    <option value="oil">oil</option>
+                    <option value="beer">beer</option>
                     <option value="milk">milk</option>
-                    <option value="juice">juice</option>
+                    <option value="glycerol">glycerol</option>
+                    <option value="oil">oil</option>
+                    <option value="honey">honey</option>
+                    <option value="sauce">sauce</option>
                   </select>
                 </div>
               </div>
@@ -247,11 +348,10 @@
 
       <!-- RIGHT: Container × Granule -->
       <div class="column">
-        <h2 class="title is-4 has-text-centered">Container × Granule</h2>
+        <h2 class="title is-4 has-text-centered">Granules</h2>
         <div class="box" style="border-radius: 16px;">
           <video id="video_granule"
                  autoplay
-                 loop
                  muted
                  playsinline
                  style="width: 100%; height: auto; border-radius: 12px; border: 3px solid #66c0ff;">
@@ -269,10 +369,12 @@
                 <div class="select is-fullwidth">
                   <select id="container_granule">
                     <!-- 与左侧容器可保持一致 -->
-                    <option value="cup">cup</option>
-                    <option value="bottle">bottle</option>
-                    <option value="beaker">beaker</option>
-                    <option value="bowl">bowl</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <!-- <option value="F">F</option> -->
                   </select>
                 </div>
               </div>
@@ -284,10 +386,14 @@
                 <div class="select is-fullwidth">
                   <select id="granule_granule">
                     <!-- 按需替换为你的颗粒物名 -->
-                    <option value="rice">rice</option>
-                    <option value="beans">beans</option>
-                    <option value="lentils">lentils</option>
-                    <option value="pearl">pearl</option>
+                    <option value="coix">coix</option>
+                    <option value="red">red</option>
+                    <option value="green">green</option>
+                    <option value="candy">candy</option>
+                    <option value="peanut">peanut</option>
+                    <option value="almond">almond</option>
+                    <option value="broad">broad</option>
+
                   </select>
                 </div>
               </div>
@@ -297,9 +403,134 @@
       </div>
 
     </div> <!-- /columns -->
+    <!-- Container×Liquids (Left) | Container×Granules (Right) -->
+
+    <!-- Q3: BC+MPAR v.s. BC -->
+    <h2 class="title is-4 has-text-centered">Q3: How does MPAR module (using QPM) refine BC actions?</h2>
+    <div class="columns is-variable is-4">
+
+      <div class="column is-one-quarter">
+        <video id="q3_water_bc" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q3/water_bc_new_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;"> BC: 20.5 (+0.5) </p>
+      </div>
+
+      <div class="column is-one-quarter">
+        <video id="q3_water_quama" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q3/water_quama_new_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;"> QuaMa: 20.1 (+0.1) </p>
+      </div>
+
+      <div class="column is-half">
+        <figure>
+          <img src="./static/images/Q3.png" alt="Pipeline">
+        </figure>
+        <!-- <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">Action refinement with MPAR</p> -->
+      </div>
+      
+    </div>
+    <!--/ Q3: BC+MPAR v.s. BC -->
+
+    <!-- Q4 delta v.s. absolute -->
+    <h2 class="title is-4 has-text-centered">Q4: What is the impact of using delta dynamics compared to absolute dynamics?</h2>
+    <!-- Absolute Dynamics -->
+    <h2 class="title is-4 has-text-centered">Absolute Dynamics</h2>
+    <div class="columns is-variable is-4">
+      
+      <div class="column">
+
+        <video id="q4_water_absolute_20" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q4/water_absolute_20_new_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">In Distribution (goal 20): 20.3 (+0.3) </p>
+      </div>
+
+      <div class="column">
+        <video id="q4_water_absolute_15" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q4/water_absolute_15_new_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">Interpolation (goal 15): 16.2 (+1.2) </p>
+      </div>
+
+      <div class="column">
+        <video id="q4_water_absolute_40" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q4/water_absolute_40_new_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">Extrapolation (goal 40): 38.3 (-1.7) </p>
+      </div>
+      
+    </div>
+
+    <!-- Delta Dynamics -->
+    <h2 class="title is-4 has-text-centered">Delta Dynamics</h2>
+    <div class="columns is-variable is-4">
+      
+      <div class="column">
+        <video id="q4_water_delta_20" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q4/water_delta_20_new_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">In Distribution (goal 20): 20.1 (+0.1) </p>
+      </div>
+
+      <div class="column">
+        <video id="q4_water_delta_15" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q4/water_delta_15_new_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">Interpolation (goal 15): 15.1 (+0.1) </p>
+      </div>
+
+      <div class="column">
+        <video id="q4_water_delta_40" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q4/water_delta_40_new_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">Extrapolation (goal 40): 40.4 (+0.4) </p>
+      </div>
+
+    </div>
+    <!--/ Q4 delta v.s. absolute -->
+
+    <!-- Q5 weighted BC v.s. BC -->
+    <h2 class="title is-4 has-text-centered">Q5: How does weighted BC improve over standard BC?</h2>
+    <div class="columns is-variable is-4">
+
+      <div class="column is-one-quarter">
+        <video id="q5_raw_bc" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q5/raw_BC_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;"> Vanilla BC: 21.8 (+1.8) </p>
+      </div>
+
+      <div class="column is-one-quarter">
+        <video id="q5_weighted_bc" controls preload muted playsinline height="100%">
+          <source src="./static/videos/Q5/Weighted_BC_2.mp4"
+                  type="video/mp4">
+        </video>
+        <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;"> Weight BC: 20.2 (+0.2) </p>
+      </div>
+
+      <div class="column is-half">
+        <figure>
+          <img src="./static/images/Q5.png" alt="Pipeline">
+        </figure>
+        <!-- <p class="has-text-weight-semibold has-text-centered" style="margin-top: 8px;">Action refinement with MPAR</p> -->
+      </div>
+      
+    </div>
+
+
   </div>
 </section>
-
 
 <script>
   /**
@@ -334,7 +565,7 @@
       if (cfg.overrideMap && cfg.overrideMap[key]) {
         return `${cfg.baseDir}/${cfg.overrideMap[key]}`;
       }
-      return `${cfg.baseDir}/${c}_${m}.mp4`;
+      return `${cfg.baseDir}/${c}_${m}_2.mp4`;
     };
 
     const setStatus = (msg, isError = false) => {
@@ -346,7 +577,7 @@
       const c = containerSel.value;
       const m = materialSel.value;
       const src = buildSrc(c, m);
-      labelEl.textContent = `Playing: ${c} + ${m}`;
+      labelEl.textContent = `Playing: Container ${c} × ${m}`;
       setStatus('Loading…', false);
       sourceEl.src = src;
       videoEl.load();
@@ -379,11 +610,11 @@
     statusId: 'status_liquid',
     containerSelectId: 'container_liquid',
     materialSelectId: 'liquid_liquid',
-    baseDir: 'static/data/videos/liquids',
+    baseDir: 'static/videos/Q2',
     overrideMap: {
       // 如需特殊命名：'beaker:milk': 'beaker_milk_v2_240fps.mp4'
     },
-    defaultContainer: 'cup',
+    defaultContainer: 'A',
     defaultMaterial: 'water'
   });
 
@@ -395,17 +626,17 @@
     statusId: 'status_granule',
     containerSelectId: 'container_granule',
     materialSelectId: 'granule_granule',
-    baseDir: 'static/data/videos/granules',
+    baseDir: 'static/videos/Q2',
     overrideMap: {
       // 例：'bowl:beans': 'bowl_redbeans_clip.mp4'
     },
-    defaultContainer: 'cup',
-    defaultMaterial: 'rice'
+    defaultContainer: 'A',
+    defaultMaterial: 'coix'
   });
 </script>
 
 
-</template>
+
 
 
 
